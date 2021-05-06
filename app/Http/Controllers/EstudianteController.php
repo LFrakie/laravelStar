@@ -64,7 +64,7 @@ class EstudianteController extends Controller
      * @param  \App\Models\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estudiante $estudiante)
+    public function edit($id)
     {
         //
         $estudiante =Estudiante::findOrFail($id);
@@ -79,9 +79,15 @@ class EstudianteController extends Controller
      * @param  \App\Models\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estudiante $estudiante)
+    public function update(Request $request, $id)
     {
         //
+        $datosEstudiante=request()->all();        
+        $datosEstudiante=request()->except('_token','method');
+
+        Estudiante::where('id','=',$id)->update($datosEstudiante);
+        return redirect('estudiantes');
+
     }
 
     /**
@@ -93,8 +99,8 @@ class EstudianteController extends Controller
     public function destroy(Estudiante $estudiante)
     {
         //
-        Estudiante::destroy($id);
-        return redirect('estudiantes');
+        // Estudiante::destroy($id);
+        // return redirect('estudiantes');
     }
 }
 
