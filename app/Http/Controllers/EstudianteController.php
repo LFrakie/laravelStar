@@ -16,7 +16,7 @@ class EstudianteController extends Controller
     {
         //
 
-        $datos["estudiantes"]=Estudiante::paginate(3);
+        $datos["estudiantes"]=Estudiante::paginate();
         return view("estudiante.index", $datos);
     }
 
@@ -42,9 +42,9 @@ class EstudianteController extends Controller
         //
         $datosEstudiante=request()->all();        
         $datosEstudiante=request()->except('_token');        
-        Estudiante::insert($datosEstudiante);
+        Estudiante::create($datosEstudiante);
         //  return response()->json($datosEstudiante);
-        redirect('estudiantes');
+        return redirect('estudiantes');
     }
 
     /**
@@ -83,7 +83,7 @@ class EstudianteController extends Controller
     {
         //
         $datosEstudiante=request()->all();        
-        $datosEstudiante=request()->except('_token','method');
+        $datosEstudiante=request()->except('_token','_method');     
 
         Estudiante::where('id','=',$id)->update($datosEstudiante);
         return redirect('estudiantes');
@@ -96,11 +96,11 @@ class EstudianteController extends Controller
      * @param  \App\Models\Estudiante  $estudiante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estudiante $estudiante)
+    public function destroy($id)
     {
         //
-        // Estudiante::destroy($id);
-        // return redirect('estudiantes');
+        Estudiante::destroy($id);
+        return redirect('estudiantes');
     }
 }
 

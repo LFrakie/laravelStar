@@ -18,8 +18,17 @@ este es archivo estudiante
             <td>{{ $estudiante->apmaterno}}</td>
             <td>
 
-            	<a href="{{ url('/estudiantes/'.$estudiante->id.'/edit')}}">Actualizar</a> | Eliminar 
-            	<form></form>
+            	<a href="{{ url('/estudiantes/'.$estudiante->id.'/edit')}}">Actualizar</a> 
+            	
+            	| 
+            	
+            	<form method="post" action="{{url('/estudiantes/'.$estudiante->id)}}" style="display:inline" >
+			  
+			    {{ csrf_field() }}
+			    {{ method_field('DELETE') }}
+			    <button class="btn btn-danger" type="submit" onclick="return confirm('Desea borrar?');">Eliminar</button>
+			</form> 
+            	
             	 
 
             </td>
