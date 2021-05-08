@@ -9,7 +9,7 @@ Ap. Paterno: <input type="text" name="appaterno" id="appaterno" value="">
 <br>
 Ap. Materno: : <input type="text" name="apmaterno" id="apmaterno" value="">
 <br>
-<input type="submit" value="Registrar">
+<input type="submit" value="Registrar" onclick="return confirm('Seguro que quiere guardar?');">
 
 </form>
 

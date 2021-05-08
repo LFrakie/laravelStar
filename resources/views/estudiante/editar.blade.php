@@ -2,7 +2,7 @@ hola
 
 <form action="{{url('/estudiantes/'.$estudiante->id)}}" method="post" >
 
-    {{ csrf_field() }}  
+    {{ csrf_field() }}
     {{ method_field('PATCH') }} 
 
     <div class="form-group">
@@ -28,6 +28,6 @@ hola
 
     <br>
 
-    <input type="submit"  class="btn btn-success" value="Actualizar">
+    <input type="submit"  class="btn btn-success" value="Actualizar" onclick="return confirm('Confirmar guardado?');">
     </div>
 </form>

@@ -42,7 +42,7 @@ class EstudianteController extends Controller
         //
         $datosEstudiante=request()->all();        
         $datosEstudiante=request()->except('_token');        
-        Estudiante::create($datosEstudiante);
+        Estudiante::insert($datosEstudiante);
         //  return response()->json($datosEstudiante);
         return redirect('estudiantes');
     }
