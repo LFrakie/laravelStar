@@ -39,3 +39,4 @@ Route::resource('asignaturas', 'App\Http\Controllers\AsignaturaController');
 
 Route::resource('estudiantes', 'App\Http\Controllers\EstudianteController');
 
+Route::resource('reniecs', 'App\Http\Controllers\ReniecController');

@@ -15,6 +15,8 @@ class ReniecController extends Controller
     public function index()
     {
         //
+        $datos["reniecs"]=Reniec::paginate();
+        return view("reniec.index", $datos);
     }
 
     /**
@@ -25,6 +27,7 @@ class ReniecController extends Controller
     public function create()
     {
         //
+        return view("reniec.crear");
     }
 
     /**
@@ -36,6 +39,11 @@ class ReniecController extends Controller
     public function store(Request $request)
     {
         //
+        $datosReniec=request()->all();        
+        $datosReniec=request()->except('_token');        
+        Reniec::insert($datosReniec);
+        //  return response()->json($datosReniec);
+        return redirect('reniecs');
     }
 
     /**
@@ -55,9 +63,11 @@ class ReniecController extends Controller
      * @param  \App\Models\Reniec  $reniec
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reniec $reniec)
+    public function edit($id)
     {
         //
+        $reniec =Reniec::findOrFail($id);
+        return view('reniec.editar',compact('reniec'));
     }
 
     /**
@@ -67,9 +77,14 @@ class ReniecController extends Controller
      * @param  \App\Models\Reniec  $reniec
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reniec $reniec)
+    public function update(Request $request, $id)
     {
         //
+        $datosReniec=request()->all();        
+        $datosReniec=request()->except('_token','_method');     
+
+        Reniec::where('id','=',$id)->update($datosReniec);
+        return redirect('reniecs');
     }
 
     /**
@@ -78,8 +93,10 @@ class ReniecController extends Controller
      * @param  \App\Models\Reniec  $reniec
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reniec $reniec)
+    public function destroy($id)
     {
         //
+        Reniec::destroy($id);
+        return redirect('reniecs');
     }
 }
