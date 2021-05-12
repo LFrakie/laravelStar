@@ -19,6 +19,12 @@ class CreateReniecsTable extends Migration
             $table->string('appaterno');
             $table->string('apmaterno');
             $table->string('DNI');
+            $table->string('sexo');
+            $table->string('fecha_nac');
+            $table->string('departamento');
+            $table->string('provincia');
+            $table->string('distrito');
+
             $table->timestamps();
         });
     }

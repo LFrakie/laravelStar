@@ -14,7 +14,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
 
 <div class="container">
-
+<h2 class="text-center py-3">Registro Nacional </h2>
 <center>
 <a href="{{ url('/reniecs/create') }}" class="btn btn-primary btn-lg my-4 shadow"  >
 AGREGAR PERSONAS
@@ -26,10 +26,16 @@ AGREGAR PERSONAS
 	<thead class="table-dark bg-primary">
 		<tr>
 			<th>#</th>			
-			<th>NOMBRE</th>			
+			<th>NOMBRES</th>			
 			<th>AP. PATERNO</th>
             <th>AP. MATERNO</th>
             <th>DNI</th>
+			<th>Sexo</th>
+
+			<th>F. Nacimiento</th>
+			<th>departamento</th>
+			<th>provincia</th>
+			<th>distrito</th>
 			<th>OPCIONES</th>
 			
 		</tr>
@@ -42,6 +48,12 @@ AGREGAR PERSONAS
             <td>{{ $reniec->appaterno}}</td>
             <td>{{ $reniec->apmaterno}}</td>
             <td>{{ $reniec->DNI}}</td>
+            <td>{{ $reniec->sexo}}</td>
+            <td>{{ $reniec->fecha_nac}}</td>
+            <td>{{ $reniec->departamento}}</td>
+            <td>{{ $reniec->provincia}}</td>
+             <td>{{ $reniec->distrito}}</td>
+
 			<td>
 			<!-- <a href="{{ url('/reniecs/'.$reniec->id.'/edit') }}"  class="btn btn-warning" onclick="return confirm('Desea Actualizar?');"  > Actualizar</a>			 -->
 			<a href="{{ url('/reniecs/'.$reniec->id.'/edit') }}"  class="btn btn-success"> Actualizar</a>			
