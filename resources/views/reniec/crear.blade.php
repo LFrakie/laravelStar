@@ -15,7 +15,7 @@ sexo: 		 <input type="text" name="sexo" id="sexo" value="">
 <br>
 
 fecha_nac: 		 <input type="text" name="fecha_nac" id="fecha_nac" value="">
-<br>
+<br>	
 departamento: 		 <input type="text" name="departamento" id="departamento" value="">
 <br>
 provincia: 		 <input type="text" name="provincia" id="provincia" value="">

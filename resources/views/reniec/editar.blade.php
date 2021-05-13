@@ -40,6 +40,37 @@ hola
 
 
 
+
+
+    <label for="sexo"  class="control-label" >{{'sexo'}}</label>
+    <input type="text" placeholder="Sexo"  name="sexo" id="sexo"   value="{{ isset($reniec->sexo)?$reniec->sexo:old('sexo') }}">
+    
+    {!! $errors->first('sexo','<div class="invalid-feedback">:message</div>')  !!}
+    <br>
+
+    <label for="fecha_nac"  class="control-label" >{{'fecha_nac'}}</label>
+    <input type="text" placeholder="Tu dni"  name="fecha_nac" id="fecha_nac"   value="{{ isset($reniec->fecha_nac)?$reniec->fecha_nac:old('fecha_nac') }}">
+    
+    {!! $errors->first('fecha_nac','<div class="invalid-feedback">:message</div>')  !!}
+    <br>
+
+    <label for="departamento"  class="control-label" >{{'departamento'}}</label>
+    <input type="text" placeholder="Tu departamento"  name="departamento" id="departamento"   value="{{ isset($reniec->departamento)?$reniec->departamento:old('departamento') }}">
+    
+    {!! $errors->first('departamento','<div class="invalid-feedback">:message</div>')  !!}
+    <br>
+
+    <label for="provincia"  class="control-label" >{{'provincia'}}</label>
+    <input type="text" placeholder="Tu provincia"  name="provincia" id="provincia"   value="{{ isset($reniec->provincia)?$reniec->provincia:old('provincia') }}">
+    
+    {!! $errors->first('provincia','<div class="invalid-feedback">:message</div>')  !!}
+    <br>
+
+    <label for="distrito"  class="control-label" >{{'distrito'}}</label>
+    <input type="text" placeholder="Tu distrito"  name="distrito" id="distrito"   value="{{ isset($reniec->distrito)?$reniec->distrito:old('distrito') }}">
+    
+    {!! $errors->first('distrito','<div class="invalid-feedback">:message</div>')  !!}
+    <br>
     <input type="submit"  class="btn btn-success" value="Actualizar" onclick="return confirm('Confirmar guardado?');">
     </div>
 </form>
